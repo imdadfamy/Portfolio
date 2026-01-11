@@ -60,7 +60,7 @@
         }
 
         .nav-links a:hover {
-            /* TODO MARDI CSS : Ajouter opacity: 0.6; */
+            opacity: 0.6;
         }
 
         /* ===== HERO SECTION ===== */
@@ -107,7 +107,9 @@
         }
 
         .cta-button:hover {
-            /* TODO MARDI CSS : Ajouter background-color: #0a84ff; */
+            background-color: #0a84ff;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 18px rgba(10,132,255,0.12);
         }
 
         /* ===== ABOUT SECTION ===== */
@@ -133,7 +135,7 @@
 
         .about-image {
             flex: 1;
-            /* TODO MARDI CSS : Ajouter min-height: 400px; */
+            min-height: 400px;
         }
 
         .about-image img {
@@ -188,7 +190,8 @@
         }
 
         .skill-card:hover {
-            /* TODO MARDI CSS : Ajouter transform: translateY(-8px); */
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(29,29,31,0.06);
         }
 
         .skill-icon {
@@ -235,7 +238,8 @@
         }
 
         .project-card:hover {
-            /* TODO MARDI CSS : Ajouter transform: translateY(-4px); */
+            transform: translateY(-4px);
+            box-shadow: 0 10px 26px rgba(29,29,31,0.06);
         }
 
         .project-card:nth-child(2) {
@@ -284,7 +288,8 @@
         }
 
         .project-link:hover {
-            /* TODO MARDI CSS : Ajouter color: #0a84ff; */
+            color: #0a84ff;
+            text-decoration: underline;
         }
 
         /* ===== CONTACT SECTION / FORM ===== */
@@ -334,7 +339,9 @@
 
         .form-group input:focus,
         .form-group textarea:focus {
-            /* TODO MARDI CSS : Ajouter outline: none; border-color: #0071e3; */
+            outline: none;
+            border-color: #0071e3;
+            box-shadow: 0 0 0 4px rgba(0,113,227,0.08);
         }
 
         .form-group textarea {
@@ -356,7 +363,9 @@
         }
 
         .submit-button:hover {
-            /* TODO MARDI CSS : Ajouter background-color: #0a84ff; */
+            background-color: #0a84ff;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 22px rgba(10,132,255,0.10);
         }
 
         /* ===== FOOTER ===== */
@@ -403,7 +412,7 @@
         }
 
         .social-links a:hover {
-            /* TODO MARDI CSS : Ajouter color: #1d1d1f; */
+            color: #1d1d1f;
         }
 
         .footer-bottom {
@@ -413,39 +422,6 @@
             border-top: 1px solid #e5e5e7;
         }
 
-        /* ===== MEDIA QUERIES (RESPONSIVE) ===== */
-
-        /* Tablette (768px et moins) */
-        @media (max-width: 768px) {
-            /* TODO MARDI CSS : Navigation - passer à flex-direction: column; gap: 20px; */
-            .nav-links {
-                /* TODO MARDI CSS : Ajouter flex-direction: column; gap: 20px; */
-            }
-
-            /* TODO MARDI CSS : Hero - réduire h1 à 2.5rem */
-            .hero h1 {
-                /* TODO MARDI CSS : Ajouter font-size: 2.5rem; padding: 40px 0; */
-            }
-
-            /* TODO MARDI CSS : About - passer en colonne */
-            .about-content {
-                /* TODO MARDI CSS : Ajouter flex-direction: column; gap: 40px; */
-            }
-
-            /* TODO MARDI CSS : Projects - adapter pour mobile */
-            .project-card {
-                /* TODO MARDI CSS : Ajouter flex-direction: column !important; gap: 20px; */
-            }
-
-            .project-image {
-                width: 100%;
-            }
-
-            /* TODO MARDI CSS : Section padding réduit */
-            .about, .skills, .projects, .contact {
-                /* TODO MARDI CSS : Ajouter padding: 80px 0; */
-            }
-        }
 
      /* ===== MEDIA QUERIES (RESPONSIVE) ===== */
 
