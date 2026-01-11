@@ -61,6 +61,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
       .nav-links a {
+        position: relative;
     color: #1d1d1f;           /* Couleur du texte : Gris très foncé (presque noir) */
     text-decoration: none;    /* Enlève le soulignement sous les liens */
     font-weight: 500;         /* Épaisseur moyenne du texte */
@@ -68,20 +69,20 @@ h1, h2, h3, h4, h5, h6 {
     transition: color 0.3s ease; /* Animation fluide de la couleur */
 }
 
-        .nav-links a:hover {
-            color: #0071e3;          /* Bleu électrique */
-        }
-        .nav-links a.btn-nav {
-    background-color: #111111; /* Fond Noir */
-    color: #ffffff;            /* Texte Blanc */
-    padding: 10px 20px;
-    border-radius: 30px;       /* Bords arrondis */
-    transition: background-color 0.3s ease;
+        .nav-links a:hover::after {
+    width: 100%;            /* La barre s'étire de gauche à droite */
 }
-
-.nav-links a.btn-nav:hover {
-    background-color: #0071e3; /* Devient Bleu au survol ! */
-    color: #ffffff;            /* Le texte reste blanc */
+      .nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    
+    width: 0%;              /* Largeur 0 au début */
+    height: 2px;            /* Épaisseur de la barre */
+    
+    background-color: blue; /* La barre est BLEUE */
+    transition: width 0.3s ease; /* L'animation d'étirement */
 }
 
         /* ===== HERO SECTION ===== */
