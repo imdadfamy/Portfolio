@@ -533,47 +533,63 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Mobile (480px et moins) */
-/* ===== MEDIA QUERIES (Mobile) ===== */
-@media (max-width: 768px) {
-    
-    /* 1. Le Conteneur NAV */
-    nav {
-        flex-direction: column; /* On empile : Logo en haut, Liens en bas */
-        gap: 15px;              /* Un petit espace entre le logo et les liens */
-        padding-bottom: 10px;
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.8rem;
     }
 
-    /* 2. Le Logo */
-    .logo {
-        font-size: 1.5rem;      /* On réduit un peu la taille du logo */
-        margin-bottom: 5px;
+    .hero p {
+        font-size: 1rem;
     }
 
-    /* 3. Les Liens (C'est ici que la magie opère) */
-    .nav-links {
-        display: flex;          /* On force l'affichage (ne pas cacher) */
-        flex-direction: row;    /* On les garde alignés horizontalement comme sur PC */
-        justify-content: center;/* On les centre */
-        flex-wrap: wrap;        /* Si l'écran est vraiment trop petit, ça passe à la ligne proprement */
-        gap: 15px;              /* On réduit l'espace entre les liens (40px c'est trop pour mobile) */
-        width: 100%;            /* Prend toute la largeur */
+    .section-title {
+        font-size: 2rem;
     }
 
-    /* 4. Le Texte des liens */
-    .nav-links a {
-        font-size: 0.9rem;      /* On réduit la taille du texte (14px environ) */
+    .about-text h2 {
+        font-size: 1.8rem;
     }
 
-    /* 5. Ajustement spécial pour le bouton Contact (si tu l'as mis) */
-    .nav-links a.btn-nav,
-    .nav-links a.cta-button {
-        padding: 8px 16px;      /* On réduit le gros bouton pour qu'il rentre */
-        font-size: 0.85rem;
+    .about-text p {
+        font-size: 1rem;
     }
 
-    /* Ajustements des autres sections pour mobile (pour que tout reste beau) */
-    .hero { padding: 100px 0; }
-    .hero h1 { font-size: 2.2rem; }
-    .hero p { font-size: 1rem; padding: 0 20px; }
-    .about-content, .skills-grid, .projects-grid { flex-direction: column; }
+    .skill-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .skill-card p {
+        font-size: 0.9rem;
+    }
+
+    .skills-grid {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .skill-card {
+        min-width: 100%;
+    }
+
+    .project-content h3 {
+        font-size: 1.4rem;
+    }
+
+    .project-content p {
+        font-size: 1rem;
+    }
+
+    .about, .skills, .projects, .contact {
+        padding: 60px 0;
+    }
+
+    .contact-form {
+        max-width: 100%;
+    }
 }
+
+
+
+
+
+    
