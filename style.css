@@ -7,11 +7,18 @@
 
         /* ===== STYLES GLOBAUX (Design Apple) ===== */
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-            color: #1d1d1f;
-            background-color: #ffffff;
-            line-height: 1.6;
+           font-family: 'Inter', sans-serif;
+    
+    color: var(--main-text);
+    background-color: var(--main-bg);
+    line-height: 1.6;
         }
+        /* Règle pour tous les titres (h1, h2, h3, h4...) */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif; /* On utilise POPPINS pour les titres */
+    font-weight: 700; /* On les met bien gras par défaut */
+    letter-spacing: -1px; /* On resserre un peu les lettres pour le style moderne */
+}
 
         .container {
             max-width: 1200px;
@@ -20,48 +27,62 @@
         }
 
         /* ===== HEADER / NAVIGATION ===== */
-        header {
-            background-color: #ffffff;
-            border-bottom: 1px solid #e5e5e7;
-            padding: 20px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            backdrop-filter: blur(20px);
-            background-color: rgba(255, 255, 255, 0.8);
-        }
+       header {
+   background-color: #ffffff;      /* Fond Blanc pur */
+  border-bottom: 1px solid #f0f0f0; /* Une ligne gris très pâle subtile en bas */
+    padding: 20px 0;                          /* Ajoute de l'espace : 20px en haut/bas, 0 à gauche/droite */
+    position: sticky;                         /* Rend le header "collant" */
+    top: 0;                                   /* Il se colle tout en haut de l'écran (0px du haut) */
+    z-index: 100;                             /* S'assure que le menu passe AU-DESSUS des autres éléments */
+    /* backdrop-filter: blur(20px); */        /* (Désactivé) C'était l'effet de flou */
+    /* background-color: rgba(255, 255, 255, 0.8); */ /* (Désactivé) Fond blanc transparent */
+}
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            /* TODO MARDI CSS : Vérifier que c'est du flexbox correct */
-        }
+       nav {
+    display: flex;                   /* Active le mode Flexbox (mise en page flexible) */
+    justify-content: space-between;  /* Pousse le Logo tout à gauche et les Liens tout à droite */
+    align-items: center;             /* Centre les éléments verticalement (pour qu'ils soient bien alignés) */
+    /* TODO MARDI CSS : Vérifier que c'est du flexbox correct */
+}
 
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 600;
-            letter-spacing: -0.5px;
-        }
-
+       .logo {
+    font-size: 1.5rem;        /* Taille du texte (environ 28px) */
+    font-weight: 700;         /* Épaisseur du texte (très gras) */
+    color: #111111;          /* Noir Charbon */
+    letter-spacing: -0.5px;   /* Resserre légèrement les lettres entre elles (style moderne) */
+    text-transform: uppercase; /* Optionnel : Met le nom en MAJUSCULE */
+    font-family: 'Poppins', sans-serif;
+}
         .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 40px;
-            /* TODO MARDI CSS : Vérifier que c'est du flexbox avec gap */
-        }
+    display: flex;      /* Met les puces de la liste côte à côte (horizontalement) */
+    list-style: none;   /* Enlève les points (puces) devant la liste */
+    gap: 40px;          /* Crée un espace vide de 40px entre chaque lien */
+    /* TODO MARDI CSS : Vérifier que c'est du flexbox avec gap */
+}
 
-        .nav-links a {
-            color: #1d1d1f;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1rem;
-            transition: opacity 0.3s;
-        }
+      .nav-links a {
+    color: #1d1d1f;           /* Couleur du texte : Gris très foncé (presque noir) */
+    text-decoration: none;    /* Enlève le soulignement sous les liens */
+    font-weight: 500;         /* Épaisseur moyenne du texte */
+    font-size: 1rem;          /* Taille de base (environ 16px) */
+    transition: color 0.3s ease; /* Animation fluide de la couleur */
+}
 
         .nav-links a:hover {
-            opacity: 0.6;
+            color: #0071e3;          /* Bleu électrique */
         }
+        .nav-links a.btn-nav {
+    background-color: #111111; /* Fond Noir */
+    color: #ffffff;            /* Texte Blanc */
+    padding: 10px 20px;
+    border-radius: 30px;       /* Bords arrondis */
+    transition: background-color 0.3s ease;
+}
+
+.nav-links a.btn-nav:hover {
+    background-color: #0071e3; /* Devient Bleu au survol ! */
+    color: #ffffff;            /* Le texte reste blanc */
+}
 
         /* ===== HERO SECTION ===== */
         .hero {
@@ -73,6 +94,16 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            background-image: 
+        /*  Le voile blanc (0.40 = 40% d'opacité, tu peux changer ce chiffre) */
+        linear-gradient(rgba(255, 255, 255, 0.40), rgba(255, 255, 255, 0.40)),
+        url('image/hero.png');
+
+    /* --- 2. RÉGLAGES DE L'IMAGE --- */
+    background-size: cover;       /* L'image s'étire pour couvrir tout l'écran */
+    background-position: center;  /* On centre l'image pour voir le sujet principal */
+    background-repeat: no-repeat; /* On interdit à l'image de se répéter comme une tuile */
+            
         }
 
         .hero h1 {
@@ -84,6 +115,7 @@
         }
 
         .hero p {
+            font-family: 'Inter', sans-serif;   /* Ta police de Texte */
             font-size: 1.3rem;
             color: #6f6f74;
             margin-bottom: 40px;
@@ -128,24 +160,24 @@
 
         .about-content {
             display: flex;
-            gap: 60px;
+            gap: 50px;
             align-items: center;
             /* TODO MARDI CSS : Vérifier que c'est du flexbox avec gap */
         }
 
         .about-image {
             flex: 1;
-            min-height: 400px;
+            min-height: 100px;
         }
 
         .about-image img {
-            width: 100%;
+            width: 70%;
             border-radius: 20px;
             display: block;
         }
 
         .about-text {
-            flex: 1;
+            flex: 2;
         }
 
         .about-text h2 {
@@ -168,51 +200,63 @@
         .skills {
             background-color: #f5f5f7;
             padding: 120px 0;
+              background-image: 
+        /*  Le voile blanc (0.40 = 40% d'opacité, tu peux changer ce chiffre) */
+        linear-gradient(rgba(255, 255, 255, 0.40), rgba(255, 255, 255, 0.40)),
+        url('image/Compétence.png');
+        background-size: cover;       /* L'image s'étire pour couvrir tout l'écran */
+    background-position: center;  /* On centre l'image pour voir le sujet principal */
+    background-repeat: no-repeat; /* On interdit à l'image de se répéter comme une tuile */
+            
         }
 
-        .skills-grid {
-            display: flex;
-            gap: 40px;
-            margin-top: 60px;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            /* TODO MARDI CSS : Vérifier que c'est du flexbox avec gap */
-        }
+       .skills-grid {
+    display: flex;             /* Active le mode Flexbox (alignement intelligent) */
+    gap: 40px;                 /* Crée un espace vide de 40px entre chaque carte (horizontal et vertical) */
+    margin-top: 60px;          /* Pousse la grille vers le bas pour ne pas coller au titre "Mes Compétences" */
+    justify-content: space-around; /* Distribue l'espace vide autour des cartes pour qu'elles soient bien réparties */
+    flex-wrap: wrap;           /* TRES IMPORTANT : Si l'écran est trop petit, les cartes passent à la ligne suivante automatiquement */
+}
 
-        .skill-card {
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            text-align: center;
-            flex: 1;
-            min-width: 250px;
-            transition: all 0.3s;
-        }
+       .skill-card {
+    background: white;         /* Fond blanc (Attention : on devra mettre var(--main-bg) ici plus tard) */
+    padding: 50px;             /* Espace intérieur : le texte ne touche pas les bords du rectangle */
+    border-radius: 20px;       /* Arrondit les coins (Style Apple) */
+    text-align: center;        /* Centre tout le texte et l'icône au milieu de la carte */
+    border: 2px solid transparent;
+    /* La gestion de la taille */
+    flex: 1;                   /* La carte va essayer de grandir pour remplir l'espace vide */
+    min-width: 200px;          /* MAIS elle ne pourra jamais faire moins de 200px de large */
+                               /* (Si l'écran est trop petit, flex-wrap la fera passer à la ligne) */
+    
+    transition: all 0.3s;      /* Prépare l'animation douce pour le survol */
+    min-height: 400px;     /* <--- Ajoute ça ! Force une hauteur minimum pour qu'elles soient égales */
+    }
 
-        .skill-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 30px rgba(29,29,31,0.06);
-        }
+       .skill-card:hover {
+    transform: translateY(-10px); /* La carte monte de 8 pixels (effet de lévitation) */
+ border-color: #0071e3; /* Ton Bleu Électrique (#0071e3) */
+    box-shadow: 0 12px 30px rgba(72, 72, 206, 0.06); /* Une ombre douce apparaît dessous pour accentuer l'effet 3D */
+}
 
-        .skill-icon {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-        }
 
-        .skill-card h3 {
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: #1d1d1f;
-            margin-bottom: 12px;
-        }
+       .skill-icon {
+    font-size: 3.5rem;         /* Rend l'icône très grosse (environ 56px) */
+    margin-bottom: 20px;       /* Laisse de l'espace sous l'icône avant le titre */
+}
 
+       .skill-card h3 {
+    font-size: 1.4rem;         /* Taille du titre */
+    font-weight: 600;          /* Texte en gras */
+    color: #1d1d1f;            /* Gris très foncé (Attention : à remplacer par var(--main-text)) */
+    margin-bottom: 12px;       /* Espace sous le titre */
+}
         .skill-card p {
-            color: #6f6f74;
-            font-size: 1rem;
-            font-weight: 400;
-            line-height: 1.6;
-        }
-
+    color: #6f6f74;            /* Gris moyen pour la description */
+    font-size: 1rem;           /* Taille de lecture standard */
+    font-weight: 400;          /* Épaisseur normale */
+    line-height: 1.6;          /* Espace entre les lignes pour bien lire */
+}
         /* ===== PROJECTS SECTION ===== */
         .projects {
             background-color: #ffffff;
@@ -246,10 +290,16 @@
             flex-direction: row-reverse;
         }
 
-        .project-image {
+        .project-image1 {
             width: 40%;
             min-height: 300px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background-image: 
+        
+        url('image/Projet1.webp');
+        background-size: cover;       /* L'image s'étire pour couvrir tout l'écran */
+    background-position: center;  /* On centre l'image pour voir le sujet principal */
+    background-repeat: no-repeat; /* On interdit à l'image de se répéter comme une tuile */
+            
             border-radius: 16px;
             display: flex;
             align-items: center;
@@ -258,6 +308,25 @@
             font-size: 1.3rem;
             font-weight: 600;
         }
+        .project-image{
+            width: 40%;
+            min-height: 300px;
+            background-image: 
+        
+        url('image/Projet2 .png');
+        background-size: cover;       /* L'image s'étire pour couvrir tout l'écran */
+    background-position: center;  /* On centre l'image pour voir le sujet principal */
+    background-repeat: no-repeat; /* On interdit à l'image de se répéter comme une tuile */
+            
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
 
         .project-content {
             flex: 1;
@@ -514,4 +583,9 @@
         max-width: 100%;
     }
 }
+
+
+
+
+
     
